@@ -12,7 +12,6 @@ public class ClientHandler implements Runnable {
         this.clientSocket = clientSocket;
         this.tupleSpace = tupleSpace;
     }
-
     @Override
     public void run() {
         try (BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
@@ -32,7 +31,6 @@ public class ClientHandler implements Runnable {
             }
         }
     }
-
     private String processRequest(String request) {
         String command = request.substring(3, 4);
         String key = request.substring(4);
@@ -40,7 +38,6 @@ public class ClientHandler implements Runnable {
         if (command.equals("P")) {
             value = request.substring(key.length() + 5);
         }
-
         switch (command) {
             case "R":
                 String readValue = tupleSpace.read(key);
@@ -67,7 +64,6 @@ public class ClientHandler implements Runnable {
                 return formatResponse("ERR invalid command", request.length());
         }
     }
-
     private String formatResponse(String message, int requestSize) {
         int size = message.length() + 3;
         return String.format("%03d %s", size, message);
