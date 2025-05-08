@@ -160,18 +160,18 @@ public class Server {
             double averageValueSize = tupleCount > 0? (double) totalValueSize / tupleCount : 0;
 
                 // Print the server summary.
-            System.out.println("--------------------- Server Summary ---------------------");
-            System.out.println("Number of tuples: " + tupleCount);
-            System.out.println("Average tuple size: " + averageTupleSize);
-            System.out.println("Average key size: " + averageKeySize);
-            System.out.println("Average value size: " + averageValueSize);
+            System.out.println("xxxxxxxxxxxxxxxxSERVER SUMMARYxxxxxxxxxxxxxxx");
+            System.out.println("tuples number: " + tupleCount);
             System.out.println("Total number of clients: " + clientCount);
             System.out.println("Total number of operations: " + operationCount);
+            System.out.println("Average tuplesize: " + averageTupleSize);
+            System.out.println("Average keysize: " + averageKeySize);
+            System.out.println("Average valuesize: " + averageValueSize);
             System.out.println("Total READs: " + readCount);
             System.out.println("Total GETs: " + getCount);
             System.out.println("Total PUTs: " + putCount);
             System.out.println("Total errors: " + errorCount);
-            System.out.println("---------------------------------------------------------");
+            System.out.println("xxxxxxxxxxxENDxxxxxxxxxxxxxxxxxx");
         }
     }
 
